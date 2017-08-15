@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Settings
+MYSQL_HOST="localhost"
+MYSQL_USER="root"
+MYSQL_PASS="root"
+MYSQL_NAME="contao"
+
 sudo -s
 
 # Update OS
@@ -13,6 +19,14 @@ if ! [ -L /var/www ]; then
   rm -rf /var/www
   ln -fs /vagrant /var/www
 fi
+
+# Install MySQL
+debconf-set-selections <<< "mysql-server mysql-server/root_password password $MYSQL_PASS"
+debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $MYSQL_PASS"
+apt-get -y install mysql-server
+
+# Create Database
+mysql -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASS -e "CREATE DATABASE $MYSQL_NAME"
 
 # Enable Apache Modules
 a2enmod rewrite
