@@ -1,5 +1,28 @@
 # Vagrant Box for Contao
 
+## Software
+
+### Server
+
+* Apache
+
+### Database
+
+* MySQL 5.6
+
+### PHP
+
+* PHP 7.0
+  * cURL
+  * MySQL
+  * SOAP
+  * XML
+
+### Contao
+
+* Contao 3.5
+* Contao Check
+
 ## Usage
 
 Start Vagrant box
