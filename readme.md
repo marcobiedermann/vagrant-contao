@@ -27,13 +27,13 @@
 
 Start Vagrant box
 
-```
+```bash
 vagrant up
 ```
 
 Stop Vagrant box
 
-```
+```bash
 vagrant halt
 ```
 
