@@ -44,3 +44,8 @@ a2enmod rewrite
 
 # Restart Apache Server
 service apache2 restart
+
+# Install Contao
+cd /var/www/html
+
+sh contao-setup.sh
